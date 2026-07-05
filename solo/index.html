@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSF Fraidl · Businessplan Solo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#16276f; --navy2:#1d2f85; --panel:rgba(29,45,118,.76); --panel2:rgba(48,55,142,.58);
+  --ink:#EEF3FF; --muted:#C5D0F6; --soft:#9EAAE5;
+  --blue:#2F73FF; --violet:#8756FF; --magenta:#EC4DCD;
+  --grad:linear-gradient(120deg,#2F73FF,#8756FF,#EC4DCD);
+  --grad-soft:linear-gradient(145deg,#27418F 0%,#6339AC 46%,#B62B93 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(160deg,#172a78 0%,#243488 42%,#18286f 100%);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:
+  radial-gradient(760px 520px at 82% 5%,rgba(236,77,205,.24),transparent 70%),
+  radial-gradient(720px 520px at 0% 56%,rgba(47,115,255,.23),transparent 72%),
+  radial-gradient(520px 420px at 88% 96%,rgba(135,86,255,.2),transparent 74%);
+  pointer-events:none;z-index:0}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:0}
+.slide{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:74px 22px;max-width:1030px;margin:0 auto}
+.slide-num{position:absolute;top:32px;right:24px;font-family:'Space Grotesk',sans-serif;font-size:.75rem;letter-spacing:.2em;color:var(--soft)}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hex{clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0% 50%);display:flex;align-items:center;justify-content:center;text-align:center}
+.hex-frame{position:relative}
+.hex-frame::before{content:"";position:absolute;inset:0;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0% 50%);background:#fff;filter:drop-shadow(0 0 10px rgba(255,255,255,.72)) drop-shadow(0 0 34px rgba(170,61,255,.52))}
+.hex-frame .hex{position:absolute;inset:2px;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.14),transparent 38%),var(--grad-soft)}
+.hero{text-align:center;align-items:center}
+.hero .hex-frame{width:148px;height:148px;margin-bottom:34px}
+.hero .hex{flex-direction:column}
+.hero .hex b{font-family:'Space Grotesk',sans-serif;font-size:1.75rem}
+.hero .hex span{font-size:.62rem;letter-spacing:.3em;color:#DCE5FF}
+.hero h1{font-size:clamp(2.05rem,6.2vw,3.65rem);line-height:1.1;max-width:900px;margin:18px 0}
+.hero .sub{color:var(--muted);max-width:680px;font-size:1.08rem}
+.scroll-hint{margin-top:50px;color:var(--muted);font-size:.78rem;letter-spacing:.15em;animation:float 2.4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+.slide h2{font-size:clamp(1.65rem,4.3vw,2.55rem);line-height:1.14;margin:12px 0 20px}
+.lede{color:var(--muted);max-width:720px;font-size:1.03rem}
+.grid{display:grid;gap:16px;margin-top:30px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card,.step-card{background:var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px 24px;backdrop-filter:blur(5px)}
+.card h3{font-size:1.05rem;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.dot{width:12px;height:13px;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0% 50%);background:var(--grad);flex:none}
+.card p,.card li,.step-card p,.step-card li{color:#D5DDFB;font-size:.94rem}
+ul{list-style:none}
+li{padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+li:last-child{border-bottom:none}
+.band{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:28px}
+.metric{background:var(--panel2);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px;text-align:center}
+.metric b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.55rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.metric span{font-size:.82rem;color:var(--muted)}
+.steps{margin-top:34px;position:relative}
+.steps::before{content:"";position:absolute;left:34px;top:24px;bottom:24px;width:2px;background:var(--grad);opacity:.62}
+.step{display:grid;grid-template-columns:70px 1fr;gap:16px;margin-bottom:24px;align-items:start}
+.step .hex-frame{width:68px;height:68px}
+.step .hex b{font-family:'Space Grotesk',sans-serif;font-size:.95rem}
+.when{font-size:.78rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;display:block;margin-bottom:5px}
+.price{font-family:'Space Grotesk',sans-serif;font-size:1.55rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-top:14px}
+.closing{text-align:center;align-items:center}
+.closing .hex-frame{width:108px;height:108px;margin-bottom:28px}
+@media(max-width:620px){.slide{padding:70px 20px}.step{grid-template-columns:62px 1fr;gap:12px}.step .hex-frame{width:60px;height:60px}.steps::before{left:30px}.card,.step-card{padding:18px 18px}}
+@media(prefers-reduced-motion:no-preference){html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}html.js .reveal.in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="slide hero">
+  <span class="slide-num">01 / 07</span>
+  <div class="hex-frame reveal"><div class="hex"><b>BSF</b><span>SOLO</span></div></div>
+  <span class="eyebrow reveal">Businessplan · Variante Solo · 2026 bis 2028</span>
+  <h1 class="reveal">Vom Servicetechniker zum <span class="grad-text">Digitalisierungspartner</span> für Tirols Klein- und Mittelbetriebe</h1>
+  <p class="sub reveal">Ich kenne die Betriebe und ihre Maschinen seit Jahren. Jetzt bringe ich ihnen auch die digitale Seite: Einkauf, Kalkulation, CRM, Zeiterfassung und KI aus einer Hand.</p>
+  <div class="scroll-hint">SCROLL</div>
+</div>
+<div class="slide">
+  <span class="slide-num">02 / 07</span>
+  <span class="eyebrow reveal">Ausgangslage</span>
+  <h2 class="reveal">Der Markt verändert sich.<br><span class="grad-text">Die kleinen Betriebe brauchen Hilfe.</span></h2>
+  <p class="lede reveal">Klein- und Mittelbetriebe stehen unter Druck: Fachkräftemangel, Kostendruck, Konsolidierung und digitale Rückstände. Genau dort hat BSF Fraidl einen Heimvorteil: Vertrauen, Praxiswissen und direkten Zugang.</p>
+  <div class="grid three reveal">
+    <div class="card"><h3><span class="dot"></span>Vertrauen</h3><p>Die Kunden kennen Bernhard persönlich. Empfehlungen kommen nicht aus der IT-Welt, sondern vom Techniker, der ihren Betrieb versteht.</p></div>
+    <div class="card"><h3><span class="dot"></span>Digitale Lücke</h3><p>KI, Automatisierung und moderne Business-Software sind in vielen Betrieben noch nicht angekommen.</p></div>
+    <div class="card"><h3><span class="dot"></span>Eigene Demo</h3><p>Die BSF Business-App wird Lernfeld, Werkzeug und spätere Verkaufsdemo: So läuft mein Betrieb, das baue ich dir auch.</p></div>
+  </div>
+  <div class="band reveal">
+    <div class="metric"><b>BSF-App</b><span>eigener Baukasten</span></div>
+    <div class="metric"><b>KMU</b><span>Handwerk und Produktion</span></div>
+    <div class="metric"><b>Miete</b><span>planbare Monatsumsätze</span></div>
+  </div>
+</div>
+<div class="slide">
+  <span class="slide-num">03 / 07</span>
+  <span class="eyebrow reveal">Produktfokus</span>
+  <h2 class="reveal">Nicht Technikspielerei.<br><span class="grad-text">Zeitersparnis im Tagesgeschäft.</span></h2>
+  <div class="grid two reveal">
+    <div class="card"><h3><span class="dot"></span>Einkauf automatisieren</h3><ul><li>QR-Code am Regal oder Mehlsack scannen</li><li>Bestellliste nach Lieferant sortieren</li><li>Preishistorie je Artikel sichtbar machen</li></ul></div>
+    <div class="card"><h3><span class="dot"></span>Produktkalkulation</h3><ul><li>Rezepturen und Einkaufspreise verbinden</li><li>Arbeitszeit und Energie berücksichtigen</li><li>Marge pro Produkt schneller erkennen</li></ul></div>
+    <div class="card"><h3><span class="dot"></span>CRM und Bestellungen</h3><ul><li>Telefon, WhatsApp und Mail strukturieren</li><li>wiederkehrende Bestellungen erfassen</li><li>Kundenhistorie aufbauen</li></ul></div>
+    <div class="card"><h3><span class="dot"></span>Zeiterfassung</h3><ul><li>per Handy oder Spracheingabe</li><li>Geofencing nur mit Bestätigung</li><li>Arbeitsrecht und DSGVO beachten</li></ul></div>
+  </div>
+</div>
+<div class="slide">
+  <span class="slide-num">04 / 07</span>
+  <span class="eyebrow reveal">Roadmap</span>
+  <h2 class="reveal">Drei Phasen bis zum <span class="grad-text">neuen Standbein.</span></h2>
+  <div class="steps reveal">
+    <div class="step"><div class="hex-frame"><div class="hex"><b>P1</b></div></div><div class="step-card"><span class="when">Juli bis Oktober 2026</span><h3>Fundament und eigene App</h3><ul><li>BSF Business-App fertigstellen</li><li>Prompting, Claude Code, Codex und Microsoft 365 vertiefen</li><li>1 bis 2 Bestandskunden interviewen</li><li>Microsoft CSP über Distributor prüfen</li></ul></div></div>
+    <div class="step"><div class="hex-frame"><div class="hex"><b>P2</b></div></div><div class="step-card"><span class="when">November 2026 bis Frühjahr 2027</span><h3>Pilotkunden und erste Umsätze</h3><ul><li>1 bis 2 Pilotkunden aus dem Bestand</li><li>erstes Modul liefern: Einkauf oder Kalkulation</li><li>Website mit Online-Bestellformular als Einstieg</li><li>Erfahrungen dokumentieren und Pakete formen</li></ul></div></div>
+    <div class="step"><div class="hex-frame"><div class="hex"><b>P3</b></div></div><div class="step-card"><span class="when">ab Mitte 2027</span><h3>Produktisierung und Mietmodell</h3><ul><li>fixe Pakete statt Einzelprojekte</li><li>Module mehrfach verkaufen</li><li>Servicegeschäft finanziert den Umbau weiter</li></ul></div></div>
+  </div>
+</div>
+<div class="slide">
+  <span class="slide-num">05 / 07</span>
+  <span class="eyebrow reveal">Pakete</span>
+  <h2 class="reveal">Monatliche Miete statt <span class="grad-text">einmaligem Großprojekt.</span></h2>
+  <div class="grid three reveal">
+    <div class="card"><h3><span class="dot"></span>Web-Einstieg</h3><p>Moderne Website, Online-Bestellformular und Wartung.</p><div class="price">ab 49 Euro / Monat</div></div>
+    <div class="card"><h3><span class="dot"></span>Einkauf & Kalkulation</h3><p>QR-Bestellung, Lieferantenlogik, Preishistorie und Rezeptkalkulation.</p><div class="price">ab 149 Euro / Monat</div></div>
+    <div class="card"><h3><span class="dot"></span>Business Hub</h3><p>CRM, Bestellannahme, Zeiterfassung und Microsoft 365 Setup.</p><div class="price">ab 299 Euro / Monat</div></div>
+  </div>
+</div>
+<div class="slide">
+  <span class="slide-num">06 / 07</span>
+  <span class="eyebrow reveal">Recherche</span>
+  <h2 class="reveal">Die wichtigste Phase:<br><span class="grad-text">zuhören, wo Zeit verloren geht.</span></h2>
+  <div class="grid two reveal">
+    <div class="card"><h3><span class="dot"></span>Bestellungen</h3><ul><li>Wie kommen Bestellungen rein?</li><li>Wer nimmt sie an?</li><li>Wo passieren Fehler?</li></ul></div>
+    <div class="card"><h3><span class="dot"></span>Einkauf</h3><ul><li>Wie wird bei Lieferanten bestellt?</li><li>Wer merkt Fehlbestände?</li><li>Gibt es Preisvergleiche?</li></ul></div>
+    <div class="card"><h3><span class="dot"></span>Kalkulation</h3><ul><li>Excel oder Bauchgefühl?</li><li>Sind echte Stückkosten bekannt?</li><li>Wie hoch ist Ausschuss?</li></ul></div>
+    <div class="card"><h3><span class="dot"></span>Budget</h3><ul><li>Größter Zeitfresser?</li><li>Was wäre eine Lösung monatlich wert?</li><li>Welche Software ist vorhanden?</li></ul></div>
+  </div>
+</div>
+<div class="slide closing">
+  <span class="slide-num">07 / 07</span>
+  <div class="hex-frame reveal"><div class="hex"><b>30</b><span>TAGE</span></div></div>
+  <span class="eyebrow reveal">Nächste Schritte</span>
+  <h2 class="reveal">Aus der Idee wird ein <span class="grad-text">testbares Angebot.</span></h2>
+  <div class="grid two reveal">
+    <div class="card"><h3><span class="dot"></span>Sofort</h3><ul><li>ersten Bestandskunden terminisieren</li><li>Einkaufs- und Kalkulationsmodul priorisieren</li><li>Fragenkatalog im Gespräch nutzen</li></ul></div>
+    <div class="card"><h3><span class="dot"></span>Danach</h3><ul><li>Microsoft CSP prüfen</li><li>bsf.tirol als Vorzeige-Website neu aufsetzen</li><li>Preisliste am Pilotkunden testen</li></ul></div>
+  </div>
+</div>
+<script>
+document.documentElement.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
